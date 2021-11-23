@@ -1,13 +1,12 @@
 <template>
   <div class="home">
     <h1>GIFS</h1>
-    <div v-for="gif in gifs">
-<p> {{ gifs.data[0].url }} </p>
+      <iframe v-bind:src="gifs.data[0].embed_url"></iframe>
+<!-- <p> <img v-bind:src="gifs.data[0].embed_url"></p> -->
 <hr />
 <hr />
 <hr />
 <hr />
-</div> 
   </div>
 </template>
 
@@ -28,7 +27,7 @@ import axios from 'axios';
     methods: {
       indexGifs: function () {
         console.log('hello')
-        axios.get("https://api.giphy.com/v1/gifs/trending?api_key=UIQjNNyJoROGDYhOB1qGpwV2y7YEOOfM&limit=10&rating=r").then(response => {
+        axios.get("https://api.giphy.com/v1/gifs/trending?api_key=UIQjNNyJoROGDYhOB1qGpwV2y7YEOOfM&limit=3&rating=r").then(response => {
           console.log(response.data)
           this.gifs = response.data 
         })
