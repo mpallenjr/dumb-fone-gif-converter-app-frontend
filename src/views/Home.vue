@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>GIFS</h1>
-
+<p> {{ gifs }} </p>
   </div>
 </template>
 
@@ -12,6 +12,7 @@ import axios from 'axios';
   export default {
     data: function () {
       return {
+        gifs: {},
         
       };
     },
@@ -23,6 +24,7 @@ import axios from 'axios';
         console.log('hello')
         axios.get("https://api.giphy.com/v1/gifs/trending?api_key=UIQjNNyJoROGDYhOB1qGpwV2y7YEOOfM&limit=10&rating=r").then(response => {
           console.log(response.data)
+          this.gifs = response.data 
         })
       }
     },
