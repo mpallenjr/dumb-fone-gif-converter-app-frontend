@@ -1,7 +1,13 @@
 <template>
   <div class="home">
     <h1>GIFS</h1>
-<p> {{ gifs }} </p>
+    <div v-for="gif in gifs">
+<p> {{ gifs.data[0].url }} </p>
+<hr />
+<hr />
+<hr />
+<hr />
+</div> 
   </div>
 </template>
 
